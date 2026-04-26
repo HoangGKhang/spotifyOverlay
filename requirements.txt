@@ -1,0 +1,7 @@
+spotipy
+python-dotenv
+requests
+PySide6
+
+pywin32
+psutil

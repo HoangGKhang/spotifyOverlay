@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.spotify_cache
+*.cache
+
+# Build files
+dist/
+build/
+*.spec
+
+# Lyrics cache
+lyrics/*.lrc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
