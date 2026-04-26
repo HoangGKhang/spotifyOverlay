@@ -13,7 +13,7 @@ from lyrics_client import get_or_download_lrc
 from lrc_parser import parse_lrc, get_lyric_context
 from overlay_ui import LyricsOverlay
 
-LYRIC_OFFSET_MS = -800
+LYRIC_OFFSET_MS = 100
 
 load_dotenv()
 
@@ -79,7 +79,7 @@ class SpotifyLyricsApp:
         self.overlay.show()
 
         self.last_track_key = None
-        self.current_lyrics = []
+        self.current_lyrics = [] 
         self.last_current_lyric = ""
 
         self.timer = QTimer()
@@ -110,7 +110,7 @@ class SpotifyLyricsApp:
 
             previous_lyric, current_lyric, next_lyric = get_lyric_context(
                 lyrics=self.current_lyrics,
-                progress_ms=track["progress_ms"]
+                progress_ms=track["progress_ms"] + LYRIC_OFFSET_MS
             )
 
             if current_lyric:
@@ -128,7 +128,7 @@ class SpotifyLyricsApp:
 
             # Ép overlay nổi lại sau mỗi lần update
             if hasattr(self.overlay, "force_topmost"):
-                self.overlay.force_topmost()
+                self.overlay.force_topmost() 
 
         except Exception as e:
             self.overlay.set_lyric(f"Lỗi: {e}")
@@ -144,7 +144,7 @@ class SpotifyLyricsApp:
             track_name=track["track_name"],
             artist_name=track["artists"],
             album_name=track["album_name"],
-            duration_seconds=duration_seconds
+            duration_seconds=duration_seconds 
         )
 
         if lrc:
