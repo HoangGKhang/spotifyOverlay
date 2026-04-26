@@ -85,7 +85,7 @@ class LyricsOverlay(QWidget):
 
         self.setStyleSheet("""
             QFrame#container {
-                background-color: rgba(245, 242, 232, 105);
+                background-color: rgb(255, 255, 255);
                 border: 1px solid rgba(255, 255, 255, 70);
                 border-radius: 8px;
             }
